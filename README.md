@@ -5,9 +5,9 @@
 Bikeshare Data Analysis
 
 ### Description
-In this project, we use data provided by Motivate, 
+In this project, we use data provided by Motivate to uncover bike share usage patterns. Motivate is 
 a bike share system provider for many major cities in the 
-United States, to uncover bike share usage patterns. 
+United States. 
 
 We compare the system usage between three large cities: Chicago, New York City, and Washington, DC.
 
