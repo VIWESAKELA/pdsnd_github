@@ -1,5 +1,5 @@
 ### Date created
-Date: 07 January 2020
+07 January 2020
 
 ### Project Title
 Bikeshare Data Analysis
