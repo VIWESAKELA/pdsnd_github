@@ -10,8 +10,7 @@ CITY_DATA = {'chicago': 'chicago.csv',
 def load_data(city):
     df = pd.read_csv(CITY_DATA[city])
 
-    # Data Cleaning
-    ## Replacing NAN Values
+    # Data Cleaning: Replacing NAN Values
     df.fillna(method='backfill', axis=0, inplace=True)
     df.fillna(method='ffill', axis=0, inplace=True)
 
