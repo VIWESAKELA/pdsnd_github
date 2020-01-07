@@ -2,13 +2,13 @@ import time
 import pandas as pd
 import numpy as np
 
-#Opening the csv files
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+# Opening the csv files with raw data from Motivate
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york city': 'new_york_city.csv',
+             'washington': 'washington.csv'}
 
- 
-# Loading the data
+
+# Loading the data for analysis
 def load_data(city):
     df = pd.read_csv(CITY_DATA[city])
 
@@ -23,7 +23,8 @@ def load_data(city):
     df['Day of Week'] = df['Start Time'].dt.weekday_name
     df['Hour of Day'] = df['Start Time'].dt.hour
 
-    filter = input('Would you like to filter data by month, day or both? Default gives the summary statitics of the city you have chosen.').lower()
+    filter = input(
+        'Would you like to filter data by month, day or both? Default gives the summary statitics of the city you have chosen.').lower()
     if filter == 'month' or filter == 'both':
         month = input('Which month- January, February, March, April, May or June?').lower()
         if month != '':
@@ -80,14 +81,12 @@ def load_data(city):
     print('The average travel time is:', avg_trave_time)
 
     ##Counts of each user type
-    userstype_count= df['User Type'].value_counts()
+    userstype_count = df['User Type'].value_counts()
     print('The user types are:', userstype_count)
 
-
-
-    if city!= 'washington':
-        #Counts of each gender
-        gender_count= df['Gender'].value_counts()
+    if city != 'washington':
+        # Counts of each gender
+        gender_count = df['Gender'].value_counts()
         print('The gender split is:', gender_count)
 
         # Most common birth year
@@ -102,7 +101,7 @@ def load_data(city):
         recent_birthyear = df['Birth Year'].max()
         print('The most recent Birth Year is:', recent_birthyear)
 
-     #Does user want to view raw data? Created a loop that prompts them if they want to see raw data which breaks if they say no.
+    # Does user want to view raw data? Created a loop that prompts them if they want to see raw data which breaks if they say no.
     while True:
         raw_data = input('Would you like to see rows of raw data (Yes or No)?').lower()
         if raw_data == 'yes':
@@ -112,27 +111,17 @@ def load_data(city):
         else:
             break
 
+
 while True:
     city = input('Would you like to see data for Chicago, New York City, or Washington? ').lower()
     if city in (CITY_DATA.keys()):
         print('You have chosen: ', city)
         load_data(city)
-        try_again=input('Would you like to try another city, month or day (Yes or No)?').lower()
-        if try_again=="yes":
+        try_again = input('Would you like to try another city, month or day (Yes or No)?').lower()
+        if try_again == "yes":
             pass
         else:
             print("You have chosen to discontinue viewing our data. Thank you for stopping-by! ")
             break
     else:
         print('Oops! That\'s not a valid city name. Try again.')
-
-
-
-
-
-
-
-
-
-
-
