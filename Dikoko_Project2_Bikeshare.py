@@ -7,7 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-
+ 
 # Loading the data
 def load_data(city):
     df = pd.read_csv(CITY_DATA[city])
